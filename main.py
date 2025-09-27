@@ -3,11 +3,6 @@
 # converts Pound to Kilogram
 # converts Inches to Centimeter
 
-# note:
-# 1) fix input unit - if users input with letter?
-# 2) fix number input - if users input with letter?
-# 3) fix if user select outof 1-3 - show text message to select only 1-3
-
 def mile_to_km():
     print("how many Miles do you want to convert to Kilometer ?")
     mile = input()
@@ -46,13 +41,16 @@ def main():
 
         title()
         user_select_unit = input("What items do you want to convert ?: ")
-        user_select_unit = int(user_select_unit)
-        if user_select_unit == 1:
-            mile_to_km()
-        if user_select_unit == 2:
-            pound_to_kg()
-        if user_select_unit == 3:
-            foot_to_cm()
+        try:
+            user_select_unit = int(user_select_unit)
+            if user_select_unit == 1:
+                mile_to_km()
+            if user_select_unit == 2:
+                pound_to_kg()
+            if user_select_unit == 3:
+                foot_to_cm()
+        except:
+            print("please input the number")
 
         print("Do you want to convert the units again ?")
         ask_again = input("Y/N?: ").upper()
