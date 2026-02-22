@@ -57,7 +57,6 @@ class Convert:
                 print("please input the valid number")
 
             ask_again = input("Do you want to convert the units again? Y/N?:").upper()
-            print(ask_again)
             if ask_again == "N":
                 break
 
