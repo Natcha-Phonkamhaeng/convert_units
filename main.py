@@ -40,11 +40,12 @@ class Convert:
     def main(self):
 
         while True:
-
+            
             self.title()
-            user_select_unit = input("What items do you want to convert ?: ")
+
             try:
-                user_select_unit = int(user_select_unit)
+                user_select_unit = int(input("What items do you want to convert ?: "))
+
                 if user_select_unit == 1:
                     self.mile_to_km()
                 if user_select_unit == 2:
@@ -52,20 +53,15 @@ class Convert:
                 if user_select_unit == 3:
                     self.foot_to_cm()
 
-                print("Do you want to convert the units again ?")
-                ask_again = input("Y/N?: ").upper()
-                if ask_again == "N":
-                    break
-            except:
-                print("please input the number")
+            except ValueError:
+                print("please input the valid number")
 
-            # print("Do you want to convert the units again ?")
-            # ask_again = input("Y/N?: ").upper()
-            # if ask_again == "N":
-            #     break
+            ask_again = input("Do you want to convert the units again? Y/N?:").upper()
+            print(ask_again)
+            if ask_again == "N":
+                break
 
 convert = Convert()
-convert.main()  
 
 if __name__ == "__main__":
     convert.main()
